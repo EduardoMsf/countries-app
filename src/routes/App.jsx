@@ -27,7 +27,10 @@ useEffect(() => {
  
   return (
     <>
-    { countries.map(country => <div>{country.capital}</div>) }
+    { countries.map(country => (<div key={country.alpha2Code}>
+          <h1>{country.capital}</h1>
+          <img src={country.flags.png} alt=''/>
+        </div>)) }
     </>
   )
 }
