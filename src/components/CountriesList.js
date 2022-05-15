@@ -22,7 +22,6 @@ const CountriesList = () => {
       console.log(error)
     }   
   }
-  countries.map(country=>console.log(country.capital))
   return (
     <div>
       <div>

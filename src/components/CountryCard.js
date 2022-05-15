@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/App.css'
 
 const CountryCard = ({ country }) => {
@@ -12,6 +13,7 @@ const CountryCard = ({ country }) => {
         <p><span>Population: </span>{country.population}</p>
         <p><span>Region: </span>{country.region}</p>
         <p><span>Capital: </span>{country.capital}</p>
+        <Link to={`/country/${country.name.common}`}>Detalles</Link>
       </div>
     </div>
   )
