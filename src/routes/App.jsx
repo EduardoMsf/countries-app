@@ -1,37 +1,24 @@
 import React, {useEffect, useState} from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from '../components/Layout';
+import Country from '../containers/Country';
+import Home from '../containers/Home';
+import NotFound from '../containers/NotFound';
+import Region from '../containers/Region';
 
 const App = () => {
 
-//   fetch('https://restcountries.com/v3.1/name/mexico')
-//     .then(res => res.json())
-//     .then(data => data.map( item => console.log(item.capital)))
-  const [countries, setCountries] = useState([])
-useEffect(() => {
-  getData()
-}, [])
-
-  const getData = async () =>{
-    const API = 'https://restcountries.com/v3.1/name/mexico';
-    try{
-      const response = await fetch(API)
-      const data = await response.json()
-      setCountries(data)
-    }catch(error){
-      console.log(error)
-    }
-        
-  }
-
-  countries.map(country => console.log(country.capital))
-
- 
   return (
-    <>
-    { countries.map(country => (<div key={country.alpha2Code}>
-          <h1>{country.capital}</h1>
-          <img src={country.flags.png} alt=''/>
-        </div>)) }
-    </>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/region' element={<Region/>}/>
+          <Route path='/countryDetails' element={<Country/>}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   )
 }
 
