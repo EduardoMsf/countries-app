@@ -26,22 +26,23 @@ const Country = () => {
       <div>
         <Link to='/'>Heyheyhey</Link>
       </div>
-      {countryDetail.map( datos =>(<div className='countryCard'>
-        <div className='countryCard-img'>
-          <img src={datos.flags.png} alt=''/>
+      {countryDetail.map( datos =>(
+        <div className='countryCard'>
+          <div className='countryCard-img'>
+            <img src={datos.flags.png} alt=''/>
+          </div>
+          <div>
+            <h3>{datos.name.common}</h3>
+            <p><span>Population: </span>{datos.population.toLocaleString('en-US')}</p>
+            <p><span>Region: </span>{datos.region}</p>
+            <p><span>Subregion: </span>{datos.subregion}</p>
+            <p><span>Capital: </span>{datos.capital}</p>
+            <p><span>Languages: </span>{datos.languages.spa}</p>
+            <p><span>Top Level Domain: </span>{datos.tld}</p>
+            <p><span>Borders: </span>{datos?.borders[0]} {datos?.borders[1]} {datos?.borders[2]}</p>
+          </div>
         </div>
-        <div>
-          <h3>{datos.name.common}</h3>
-          <p><span>Population: </span>{datos.population}</p>
-          <p><span>Region: </span>{datos.region}</p>
-          <p><span>Subregion: </span>{datos.subregion}</p>
-          <p><span>Capital: </span>{datos.capital}</p>
-          
-          <p><span>Languages: </span>{datos.languages.spa}</p>
-          <p><span>Top Level Domain: </span>{datos.tld}</p>
-          <p><span>Borders: </span>{datos.borders[0]} {datos?.borders[1]} {datos?.borders[2]}</p>
-        </div>
-      </div>))}
+      ))}
     </div>
   )
 }

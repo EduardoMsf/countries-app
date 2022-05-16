@@ -13,7 +13,7 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/region' element={<Region/>}/>
+          <Route path='/region/:region' element={<Region/>}/>
           <Route path='/country/:country' element={<Country/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
