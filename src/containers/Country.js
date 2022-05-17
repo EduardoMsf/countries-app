@@ -24,6 +24,7 @@ const Country = () => {
   return (
     <div>
       <div>
+        <Search />
         <Link to='/'>Heyheyhey</Link>
       </div>
       {countryDetail.map( datos =>(

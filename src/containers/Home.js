@@ -1,9 +1,13 @@
 import React from 'react'
 import CountriesList from '../components/CountriesList'
+import Search from '../components/Search'
 
 const Home = () => {
   return (
-    <CountriesList />
+    <div>
+      <Search />
+      <CountriesList />
+    </div>
   )
 }
 

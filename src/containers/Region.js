@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
 import CountryCard from '../components/CountryCard'
+import Search from '../components/Search';
 
 const Region = () => {
   const { region } = useParams();
@@ -8,7 +9,7 @@ const Region = () => {
     
   useEffect(() => {
     getData(region)
-  }, [])
+  }, [region])
     
   const getData = async (nameRegion) =>{
     const API = `https://restcountries.com/v3.1/region/${nameRegion}`;
@@ -24,6 +25,7 @@ const Region = () => {
   return (
     <div>
       <div>
+        <Search />
         <Link to='/'>Heyheyhey</Link>
       </div>
       {regionDetail.map( countries =>(

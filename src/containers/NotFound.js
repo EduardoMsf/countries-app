@@ -1,8 +1,12 @@
 import React from 'react'
+import Search from '../components/Search'
 
 const NotFound = () => {
   return (
-    <h1>NotFound</h1>
+    <div>
+      <Search />
+      NotFound
+    </div>
   )
 }
 
