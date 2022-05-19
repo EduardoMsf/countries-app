@@ -8,26 +8,32 @@ const Search = () => {
 
   const onToggleChange = e =>{
     setSearchedValue(e.target.value)
-    console.log('event', e.target.value)
+    //console.log('event', e.target.value)
   }
-//   useEffect(() => {
-//     console.log('state', searchedValue)
-//   }, [searchedValue])
+  useEffect(() => {
+    getData();
+  }, [])
 
   const getData = async () =>{
     const API = 'https://restcountries.com/v3.1/all';
     try{
       const response = await fetch(API)
-      const data = await response.json()
-      setCountries(data)
+      const datos = await response.json()
+      setData(datos)
     }catch(error){
       console.log(error)
     }   
   }
 
+
   const matchSearch = (value) =>{
     //Esperaremos a hacer el match hasta que uncluyamos el context
+    const results = data.filter(country => country.name.common.toLowerCase().includes(value))
+    console.log(results)
+    return results
   }
+
+  matchSearch(searchedValue)
   
   return (
     <div>
