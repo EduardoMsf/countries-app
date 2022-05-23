@@ -28,9 +28,11 @@ const Region = () => {
         <Search />
         <Link to='/'>Heyheyhey</Link>
       </div>
-      {regionDetail.map( countries =>(
-        <CountryCard country={countries} />
-      ))}
+      <div className='country-list-container'>
+        {regionDetail.map( countries =>(
+          <CountryCard country={countries} />
+        ))}
+      </div>
     </div>
   )
 }
