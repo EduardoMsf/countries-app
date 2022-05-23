@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import CountryCard from './CountryCard'
+import '../styles/App.css'
 
 const countryTest = {
   capital: 'Montevideo'
@@ -23,8 +24,8 @@ const CountriesList = () => {
     }   
   }
   return (
-    <div>
-      <div>
+    <div className=''>
+      <div className='country-list-container'>
       { countries.map(country =>(
             <CountryCard country={country} />
           ))

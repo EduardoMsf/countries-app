@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
+import Search from '../components/Search';
 import getDataDetails from '../utils/getDataByCountry'
 
 const Country = () => {

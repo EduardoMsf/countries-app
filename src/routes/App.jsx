@@ -5,6 +5,7 @@ import Country from '../containers/Country';
 import Home from '../containers/Home';
 import NotFound from '../containers/NotFound';
 import Region from '../containers/Region';
+import '../styles/App.css';
 
 const App = () => {
 
