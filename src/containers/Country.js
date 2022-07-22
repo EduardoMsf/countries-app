@@ -41,7 +41,7 @@ const Country = () => {
             <p><span>Capital: </span>{datos.capital}</p>
             <p><span>Languages: </span>{datos.languages.spa}</p>
             <p><span>Top Level Domain: </span>{datos.tld}</p>
-            <p><span>Borders: </span>{datos?.borders[0]} {datos?.borders[1]} {datos?.borders[2]}</p>
+            {/*<p><span>Borders: </span>{datos?.borders[0]} {datos?.borders[1]} {datos?.borders[2]}</p>*/}
           </div>
         </div>
       ))}
