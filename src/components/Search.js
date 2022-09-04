@@ -36,7 +36,7 @@ const Search = () => {
   matchSearch(searchedValue)
   
   return (
-    <div>
+    <div className='searchContainer'>
         <input type='text' label='Search for a country' onChange={onToggleChange}/>
         <Link to='/region/Asia'>Asia</Link>
         <Link to='/region/America'>America</Link>

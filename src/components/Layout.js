@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 const Layout = ({children}) => {
   return (
-    <div>
+    <div className='animate__animated animate__fadeIn animate__faster'>
       <Header />
         {children}
       <Footer />

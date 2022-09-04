@@ -1,15 +1,128 @@
-.country-list-container{
+body{
+  background-color: #F5F5F5;
+}
+
+.box-shadow {
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+}
+
+.searchContainer{
+  margin-bottom: 16px;
+}
+
+@media (max-width: 480px) {
+  .country-list-container{
     display: grid;
-    grid-template-columns: repeat(4 , 1fr);
+    grid-template-columns: 1;
     justify-content: center;
-    gap: 10px;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 690px) {
+  .country-list-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    gap:12px
+  }
+}
+
+@media (min-width: 1200px) {
+  .country-list-container{
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  justify-content: center;
+  gap: 26px;
+  }
 }
 
 .countryCard{
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
+  border-radius: 16px;
+}
+
+.countryCard:hover {
+  transform: scale(1.1);
 }
 
 .countryCard img{
-    width: 100%;
-    height: 200px;
+  border-radius: 16px;
+  width: 100%;
+  height: 200px;
 }
+
+.countryCard-content{
+  margin-left: 12px;
+}
+
+.countryCard a{
+  text-decoration: none;
+  color:black;
+}
+
+.countryCard:visited{
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .countryCardItem{
+    display: grid;
+    grid-template-columns: 1;
+    justify-items: center;
+    align-items: center;
+    gap: auto;
+    border-radius: 16px;
+    background-color: #F5F5F5;
+  }
+  .countryCardItem img{
+    width: 100%;
+    height: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 690px) {
+  .countryCardItem{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    align-items: center;
+    gap:12px;
+    border-radius: 16px;
+    background-color: #F5F5F5;
+  }
+  .countryCardItem img{
+    width: 90%;
+    height: auto;
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .countryCardItem{
+    max-width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 26px;
+    border-radius: 16px;
+    background-color: #F5F5F5;
+  }
+  .countryCardItem img{
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+}
+
+.countryCardItem-content{
+  justify-content: center;
+}
+
+/*Botones*/

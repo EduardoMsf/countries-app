@@ -26,14 +26,14 @@ const Country = () => {
     <div>
       <div>
         <Search />
-        <Link to='/'>Heyheyhey</Link>
+        <Link to='/'>Home</Link>
       </div>
       {countryDetail.map( datos =>(
-        <div className='countryCard'>
-          <div className='countryCard-img'>
+        <div className='countryCardItem box-shadow'>
+          <div className=''>
             <img src={datos.flags.png} alt=''/>
           </div>
-          <div>
+          <div className='countryCardItem-content'>
             <h3>{datos.name.common}</h3>
             <p><span>Population: </span>{datos.population.toLocaleString('en-US')}</p>
             <p><span>Region: </span>{datos.region}</p>

@@ -23,10 +23,10 @@ const Region = () => {
   }
 
   return (
-    <div>
-      <div>
+    <div className=''>
+      <div className=''>
         <Search />
-        <Link to='/'>Heyheyhey</Link>
+        <Link to='/' >Home</Link>
       </div>
       <div className='country-list-container'>
         {regionDetail.map( countries =>(
