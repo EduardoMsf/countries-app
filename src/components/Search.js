@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 const Search = () => {
 
   const [ searchedValue, setSearchedValue] = useState('');
   const [ data, setData] = useState([])
+  const [ valueSelect, setValueSelect] = useState('')
+  const selectRef = useRef('')
 
   const onToggleChange = e =>{
     setSearchedValue(e.target.value)
@@ -34,15 +36,30 @@ const Search = () => {
   }
 
   matchSearch(searchedValue)
+
+  const handleValueSelect = (e) => {
+    e.preventDefault()
+    setValueSelect(e.target.value)
+  }
+
   
+  console.log(valueSelect)
   return (
     <div className='searchContainer'>
         <input type='text' label='Search for a country' onChange={onToggleChange}/>
-        <Link to='/region/Asia'>Asia</Link>
-        <Link to='/region/America'>America</Link>
-        <Link to='/region/Africa'>Africa</Link>
-        <Link to='/region/Europe'>Europa</Link>
-        <Link to='/region/Oceania'>Oceania</Link>
+        <select value={valueSelect} name="select" onChange={handleValueSelect} onClick={()=>selectRef.current.click()}>
+          <option value='' disabled>Selecciona una region</option>
+          <option value="/region/Asia">Asia</option>
+          <option value="/region/America">America</option>
+          <option value="/region/Africa">Africa</option>
+          <option value="/region/Europe">Europe</option>
+          <option value="/region/Oceania">Oceania</option>
+        </select>
+        <Link style={{display:'none'}} ref={selectRef}  to={valueSelect}>Variable</Link>
+        {/* <Link style={{display:'none'}} to='/region/America'>America</Link>
+        <Link style={{display:'none'}} to='/region/Africa'>Africa</Link>
+        <Link style={{display:'none'}} to='/region/Europe'>Europa</Link>
+        <Link style={{display:'none'}} to='/region/Oceania'>Oceania</Link> */}
     </div>
   )
 }

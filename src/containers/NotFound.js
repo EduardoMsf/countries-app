@@ -4,7 +4,7 @@ import Search from '../components/Search'
 const NotFound = () => {
   return (
     <div>
-      <Search />
+      {/* <Search /> */}
       NotFound
     </div>
   )

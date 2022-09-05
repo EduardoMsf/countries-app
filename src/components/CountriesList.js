@@ -2,9 +2,7 @@ import React, {useState, useEffect} from 'react'
 import CountryCard from './CountryCard'
 import '../styles/App.css'
 
-const countryTest = {
-  capital: 'Montevideo'
-}
+
 const CountriesList = () => {
   
   const [countries, setCountries] = useState([])

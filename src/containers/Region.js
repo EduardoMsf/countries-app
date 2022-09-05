@@ -24,10 +24,9 @@ const Region = () => {
 
   return (
     <div className=''>
-      <div className=''>
+      {/* <div className=''>
         <Search />
-        <Link to='/' >Home</Link>
-      </div>
+      </div> */}
       <div className='country-list-container'>
         {regionDetail.map( countries =>(
           <CountryCard country={countries} />
