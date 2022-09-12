@@ -22,6 +22,10 @@ const Country = () => {
     }   
   }
 
+  const onHandleBack = () =>{
+    history.go(-1)
+  }
+
   return (
     <div>
       {/* <div>
@@ -44,6 +48,11 @@ const Country = () => {
           </div>
         </div>
       ))}
+      <div>
+        <button onClick={onHandleBack}>
+          {'<- Atras'}
+        </button>
+      </div>
     </div>
   )
 }

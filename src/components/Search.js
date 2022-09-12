@@ -9,12 +9,12 @@ const Search = () => {
   const selectRef = useRef('')
 
   const onToggleChange = e =>{
-    setSearchedValue(e.target.value)
+    setSearchedValue(e.target.value.toLowerCase())
     //console.log('event', e.target.value)
   }
   useEffect(() => {
     getData();
-  }, [])
+  }, [searchedValue])
 
   const getData = async () =>{
     const API = 'https://restcountries.com/v3.1/all';
@@ -46,7 +46,7 @@ const Search = () => {
   console.log(valueSelect)
   return (
     <div className='searchContainer'>
-        <input type='text' label='Search for a country' onChange={onToggleChange}/>
+        <input type='text' label='Search for a country' placeholder='Search for a country' onClick={onToggleChange}/>
         <select value={valueSelect} name="select" onChange={handleValueSelect} onClick={()=>selectRef.current.click()}>
           <option value='' disabled>Selecciona una region</option>
           <option value="/region/Asia">Asia</option>
