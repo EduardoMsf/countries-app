@@ -1,6 +1,7 @@
 body{
   background-color: #F5F5F5;
   margin: 0 48px;
+  transition: .4s ease all;
 }
 
 .box-shadow {
@@ -18,43 +19,47 @@ body{
   padding: 0 16px;
 }
 
-/* .searchContainer{
-  margin-bottom: 16px;
-} */
+.searchContainer{
+  margin: 32px 0;
+} 
 
 @media (max-width: 480px) {
-  .country-list-container{
+  .countryList-container{
     display: grid;
     grid-template-columns: 1;
     justify-content: center;
     gap: 16px;
+    margin-top: 16px;
   }
 }
 
 @media (min-width: 540px) {
-  .country-list-container{
+  .countryList-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     justify-content: center;
-    gap:12px
+    gap:12px;
+    margin-top: 16px;
   }
 }
 
 @media (min-width: 998px) {
-  .country-list-container{
+  .countryList-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     justify-content: center;
-    gap:12px
+    gap:12px;
+    margin-top: 16px;
   }
 }
 
 @media (min-width: 1200px) {
-  .country-list-container{
+  .countryList-container{
   display: grid;
   grid-template-columns: repeat(4 , 1fr);
   justify-content: center;
   gap: 26px;
+  margin-top: 16px;
   }
 }
 
@@ -84,6 +89,10 @@ body{
 
 .countryCard:visited{
   text-decoration: none;
+}
+
+.countryCardContainer{
+  display: grid;
 }
 
 @media (max-width: 480px) {
@@ -173,4 +182,24 @@ a{
 }
 a:visited{
   text-decoration: none;
+}
+
+/*Botones*/
+
+.countryCardBtn{
+  margin: 32px auto;
+}
+.btnBack{
+  border-radius: 16px;
+  background-color: lightgray;
+  border: none;
+}
+
+
+/*footer*/
+.footerContainer{
+  bottom: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  text-align: center;
 }

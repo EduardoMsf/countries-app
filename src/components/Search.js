@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
+import CountryCard from './CountryCard'
+
 const Search = () => {
 
   const [ searchedValue, setSearchedValue] = useState('');
   const [ data, setData] = useState([])
+  const [ filteredData, setFilteredData] = useState([])
   const [ valueSelect, setValueSelect] = useState('')
   const selectRef = useRef('')
 
@@ -31,11 +34,16 @@ const Search = () => {
   const matchSearch = (value) =>{
     //Esperaremos a hacer el match hasta que uncluyamos el context
     const results = data.filter(country => country.name.common.toLowerCase().includes(value))
-    console.log(results)
+    //console.log(results)
+    //setFilteredData(results)
     return results
   }
 
-  matchSearch(searchedValue)
+  useEffect(() => {
+    setFilteredData(matchSearch(searchedValue))
+    console.log(filteredData)
+  }, [searchedValue])
+  
 
   const handleValueSelect = (e) => {
     e.preventDefault()
@@ -45,8 +53,9 @@ const Search = () => {
   
   console.log(valueSelect)
   return (
-    <div className='searchContainer'>
-        <input type='text' label='Search for a country' placeholder='Search for a country' onClick={onToggleChange}/>
+    <div className=''>
+      <div className='searchContainer'>
+        <input type='text' label='Search for a country' placeholder='Search for a country' onChange={onToggleChange}/>
         <select value={valueSelect} name="select" onChange={handleValueSelect} onClick={()=>selectRef.current.click()}>
           <option value='' disabled>Selecciona una region</option>
           <option value="/region/Asia">Asia</option>
@@ -55,11 +64,15 @@ const Search = () => {
           <option value="/region/Europe">Europe</option>
           <option value="/region/Oceania">Oceania</option>
         </select>
-        <Link style={{display:'none'}} ref={selectRef}  to={valueSelect}>Variable</Link>
-        {/* <Link style={{display:'none'}} to='/region/America'>America</Link>
-        <Link style={{display:'none'}} to='/region/Africa'>Africa</Link>
-        <Link style={{display:'none'}} to='/region/Europe'>Europa</Link>
-        <Link style={{display:'none'}} to='/region/Oceania'>Oceania</Link> */}
+        <Link style={{display:'none'}} ref={selectRef}  to={valueSelect}/>
+      </div>
+      <div className='countryList-container'>
+      {filteredData.length == 0 ? '' :
+        filteredData.map(country =>(
+          <CountryCard country={country} />
+        ))
+        }
+      </div>
     </div>
   )
 }

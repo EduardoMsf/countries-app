@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import CountryCard from './CountryCard'
-import '../styles/App.css'
+import Search from './Search'
 
 
 const CountriesList = () => {
@@ -23,7 +23,10 @@ const CountriesList = () => {
   }
   return (
     <div className=''>
-      <div className='country-list-container'>
+      <div>
+        <Search />
+      </div>
+      <div className='countryList-container'>
       { countries.map(country =>(
             <CountryCard country={country} />
           ))

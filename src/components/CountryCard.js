@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../styles/App.css'
 
 const CountryCard = ({ country }) => {
   return (
@@ -11,7 +10,7 @@ const CountryCard = ({ country }) => {
         </div>
         <div className='countryCard-content'>
           <h3>{country.name.common}</h3>
-          <p><span>Population: </span>{country.population}</p>
+          <p><span>Population: </span>{country.population.toLocaleString('en-US')}</p>
           <p><span>Region: </span>{country.region}</p>
           <p><span>Capital: </span>{country.capital}</p>
         </div>

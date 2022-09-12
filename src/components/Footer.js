@@ -2,8 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-      <p>Este es el footer</p>
+    <div className='footerContainer'>
+      <p>Todos los derechos reservados ©</p>
+      <p>La API de restcountries tiene ligeros cambios al momento de realizar este proyecto</p>
     </div>
   )
 }

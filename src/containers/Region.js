@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import CountryCard from '../components/CountryCard'
 import Search from '../components/Search';
 
@@ -24,10 +24,10 @@ const Region = () => {
 
   return (
     <div className=''>
-      {/* <div className=''>
+      <div className=''>
         <Search />
-      </div> */}
-      <div className='country-list-container'>
+      </div>
+      <div className='countryList-container'>
         {regionDetail.map( countries =>(
           <CountryCard country={countries} />
         ))}
